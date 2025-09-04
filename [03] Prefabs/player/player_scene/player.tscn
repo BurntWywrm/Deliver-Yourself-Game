@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://c5ddyd8m5gkh4"]
+[gd_scene load_steps=5 format=3 uid="uid://c5ddyd8m5gkh4"]
 
-[node name="player" type="RigidBody3D" groups=["player"]]
+[ext_resource type="Script" uid="uid://lgvrsyljv7o4" path="res://[03] Prefabs/player/player_scripts/player/player.gd" id="1_mx1uw"]
+[ext_resource type="Script" uid="uid://025cm3nchdyi" path="res://[03] Prefabs/player/player_scripts/shapeshifting/shapeshifiting_manager/shapeshifting_manager.gd" id="2_6tigd"]
+[ext_resource type="Script" uid="uid://cxgw1j2csxbj3" path="res://[03] Prefabs/player/player_scripts/shapeshifting/morph_state/box_morph_script.gd" id="3_alcr1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_73x2g"]
+
+[node name="player" type="RigidBody3D"]
+script = ExtResource("1_mx1uw")
+
+[node name="player_collision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_73x2g")
+
+[node name="shapeshift_manager" type="Node" parent="." node_paths=PackedStringArray("starting_morph")]
+script = ExtResource("2_6tigd")
+starting_morph = NodePath("box")
+
+[node name="box" type="Node" parent="shapeshift_manager"]
+script = ExtResource("3_alcr1")
