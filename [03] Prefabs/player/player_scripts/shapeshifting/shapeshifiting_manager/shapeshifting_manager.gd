@@ -6,9 +6,10 @@ extends Node
 
 # Initialize the state machine by giving each child state a reference to the
 # parent object it belongs to and enter the default starting_morph.
-func init(parent: Player) -> void:
+func init(parent: Player, morph_selection_component) -> void:
 	for child in get_children():
 		child.parent = parent
+		child.morph_selection_component = morph_selection_component
 
 	# Initialize to the default state
 	change_morph(starting_morph)

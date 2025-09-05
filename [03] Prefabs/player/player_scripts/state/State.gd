@@ -4,6 +4,9 @@ extends Node
 # Hold a reference to the parent so that it can be controlled by the state
 var parent: Player
 
+# Hold a reference to the morph_selection_component so that it can be controlled by the state
+var morph_selection_component
+
 func enter() -> void:
 	pass
 
