@@ -1,6 +1,8 @@
 class_name Box_Morph
 extends State
 
+#box_morph_script.gd
+
 func enter() -> void:
 	print("BOX")
 

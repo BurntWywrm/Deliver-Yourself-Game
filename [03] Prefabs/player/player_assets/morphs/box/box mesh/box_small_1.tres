@@ -1,0 +1,42 @@
+[gd_resource type="ArrayMesh" load_steps=4 format=4 uid="uid://px8hux3cvw5n"]
+
+[ext_resource type="Texture2D" uid="uid://b8imcc8uuuomo" path="res://[03] Prefabs/player/player_assets/morphs/box/Box_box_texture.png" id="1_dn52n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6j4mw"]
+resource_name = "box_material"
+cull_mode = 2
+albedo_texture = ExtResource("1_dn52n")
+roughness = 0.5
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3l6d0"]
+_surfaces = [{
+"aabb": AABB(-0.079248, -0.005, -0.237744, 0.158496, 0.00999999, 0.475488),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAAAEAAEAAgADAAUAAgAFAAAAAAAGAAQAAAAFAAYABAAHAAEAAQAHAAMABAAGAAcABQADAAcABQAHAAYA"),
+"name": "box_material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAD//wAAAAAAAAAAAAAAAAAAAAD//wAAAAD//wAA//8AAAAA/////wAA////////AAD/////AAAAAA==")
+}]
+blend_shape_mode = 0
+
+[resource]
+resource_name = "Box_Cube_007"
+_surfaces = [{
+"aabb": AABB(-0.079248, -0.005, -0.237744, 0.158496, 0.00999999, 0.475488),
+"attribute_data": PackedByteArray("lI1XyNGZvEGUjbxB0ZlXyAwhYZXaJYlg2iVhlQwhiWBXgXOGDaafgw2mc4ZXgZ+DlI1zhtGZn4PRmXOGlI2fg9GZc4aUjZ+DlI1zhtGZn4MNpnOGV4Gfg1eBc4YNpp+D"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_6j4mw"),
+"name": "box_material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP///z///wAAAAD/PwAAAAAAAP8///8AAP///z8AAP//////v/////8AAP+//////////78AAP//AAD/v///AAD///+//////wAA/7///wAAAAD/v/////////+/AAAAAP//AID///////8AgP//AAD//wCAAAD/////AID//wAAAAAAAAAA//8AAAAAAAAAAAAAAAD/////AAAAAAAAAAAAAAAAAAD/////AAAAAAAA//8AAAAA//8AAAAAAAD/fwAA/38AAP9/AAD/f////3////9/////f////3//fwAA/38AAP9/AAD/fwAA/3////9/////f////3///////3////9/////f////3//P/9//z//f/8//3//P/9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_3l6d0")

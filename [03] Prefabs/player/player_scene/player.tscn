@@ -1,19 +1,27 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5ddyd8m5gkh4"]
+[gd_scene load_steps=16 format=3 uid="uid://c5ddyd8m5gkh4"]
 
 [ext_resource type="Script" uid="uid://lgvrsyljv7o4" path="res://[03] Prefabs/player/player_scripts/player/player.gd" id="1_mx1uw"]
 [ext_resource type="Script" uid="uid://025cm3nchdyi" path="res://[03] Prefabs/player/player_scripts/shapeshifting/shapeshifiting_manager/shapeshifting_manager.gd" id="2_6tigd"]
+[ext_resource type="Shape3D" uid="uid://f7hi4txnl64w" path="res://[03] Prefabs/player/player_assets/collisions/gift/gift_collision.tres" id="2_p6uu2"]
 [ext_resource type="Script" uid="uid://cxgw1j2csxbj3" path="res://[03] Prefabs/player/player_scripts/shapeshifting/morph_state/box_morph_script.gd" id="3_alcr1"]
 [ext_resource type="Script" uid="uid://cf044if58jqj0" path="res://[03] Prefabs/player/player_scripts/shapeshifting/morph_state/envelope_morph_script.gd" id="4_evv4n"]
 [ext_resource type="Script" uid="uid://72ri1l3jltu4" path="res://[03] Prefabs/player/player_scripts/shapeshifting/morph_state/gift_morph_script.gd" id="4_scpqb"]
 [ext_resource type="Script" uid="uid://brn5tpxkk83bw" path="res://[03] Prefabs/player/player_scripts/shapeshifting/morph_selection_component/morph_selection_component.gd" id="6_3w07h"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_73x2g"]
+[ext_resource type="ArrayMesh" uid="uid://cnpome5d7v2ke" path="res://[03] Prefabs/player/player_assets/morphs/box/box mesh/box_body.tres" id="7_8mq0u"]
+[ext_resource type="ArrayMesh" uid="uid://bdfay1orkm2i2" path="res://[03] Prefabs/player/player_assets/morphs/box/box mesh/box_flap_1.tres" id="8_g0waa"]
+[ext_resource type="ArrayMesh" uid="uid://d2p3uf58mfehp" path="res://[03] Prefabs/player/player_assets/morphs/box/box mesh/box_flap_2.tres" id="9_nlnxo"]
+[ext_resource type="ArrayMesh" uid="uid://px8hux3cvw5n" path="res://[03] Prefabs/player/player_assets/morphs/box/box mesh/box_small_1.tres" id="10_vab0r"]
+[ext_resource type="ArrayMesh" uid="uid://ckgwg2pg7tmsf" path="res://[03] Prefabs/player/player_assets/morphs/box/box mesh/box_small_2.tres" id="11_8lhsw"]
+[ext_resource type="ArrayMesh" uid="uid://ddrwydl52qxik" path="res://[03] Prefabs/player/player_assets/morphs/gift/gift_mesh/gift_body.tres" id="12_vab0r"]
+[ext_resource type="ArrayMesh" uid="uid://dyc2c6xrwsy8x" path="res://[03] Prefabs/player/player_assets/morphs/gift/gift_mesh/gift_lid.tres" id="13_8lhsw"]
+[ext_resource type="ArrayMesh" uid="uid://cqoayq212jusd" path="res://[03] Prefabs/player/player_assets/morphs/envelope/envelope mesh/envelope.tres" id="14_8lhsw"]
 
 [node name="player" type="RigidBody3D"]
 script = ExtResource("1_mx1uw")
 
 [node name="player_collision" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_73x2g")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0144355, 0)
+shape = ExtResource("2_p6uu2")
 
 [node name="shapeshift_manager" type="Node" parent="." node_paths=PackedStringArray("starting_morph")]
 script = ExtResource("2_6tigd")
@@ -33,3 +41,42 @@ script = ExtResource("6_3w07h")
 envelope_morph = NodePath("../shapeshift_manager/envelope")
 gift_morph = NodePath("../shapeshift_manager/gift")
 box_morph = NodePath("../shapeshift_manager/box")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Visuals" type="Node3D" parent="."]
+
+[node name="box" type="Node3D" parent="Visuals"]
+
+[node name="box_body" type="MeshInstance3D" parent="Visuals/box"]
+mesh = ExtResource("7_8mq0u")
+
+[node name="box_flap_1" type="MeshInstance3D" parent="Visuals/box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.163, -0.119)
+mesh = ExtResource("8_g0waa")
+
+[node name="box_flap_2" type="MeshInstance3D" parent="Visuals/box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16336, 0.118892)
+mesh = ExtResource("9_nlnxo")
+
+[node name="box_small_1" type="MeshInstance3D" parent="Visuals/box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23544, -0.160204, 0)
+mesh = ExtResource("10_vab0r")
+
+[node name="box_small_2" type="MeshInstance3D" parent="Visuals/box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23901, -0.16311, 0)
+mesh = ExtResource("11_8lhsw")
+
+[node name="gift" type="Node3D" parent="Visuals"]
+
+[node name="gift_body" type="MeshInstance3D" parent="Visuals/gift"]
+mesh = ExtResource("12_vab0r")
+
+[node name="gift_lid" type="MeshInstance3D" parent="Visuals/gift"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.202428, 0)
+mesh = ExtResource("13_8lhsw")
+
+[node name="envelope" type="Node3D" parent="Visuals"]
+
+[node name="envelope_body" type="MeshInstance3D" parent="Visuals/envelope"]
+mesh = ExtResource("14_8lhsw")

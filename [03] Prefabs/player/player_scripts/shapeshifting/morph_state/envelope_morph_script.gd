@@ -1,6 +1,8 @@
 class_name Envelope_Morph
 extends State
 
+#envelope_morph_script.gd
+
 func enter() -> void:
 	print("ENVELOPE")
 

@@ -1,6 +1,8 @@
 class_name Gift_Morph
 extends State
 
+#gift_morph_script.gd
+
 func enter() -> void:
 	print("GIFT")
 

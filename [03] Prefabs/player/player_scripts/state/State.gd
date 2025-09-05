@@ -7,6 +7,9 @@ var parent: Player
 # Hold a reference to the morph_selection_component so that it can be controlled by the state
 var morph_selection_component
 
+# Hold a reference to the morph_selection_component so that it can be controlled by the state
+var animations: AnimationPlayer
+
 func enter() -> void:
 	pass
 
