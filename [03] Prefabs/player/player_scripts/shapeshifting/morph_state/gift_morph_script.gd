@@ -4,6 +4,7 @@ extends State
 #gift_morph_script.gd
 
 func enter() -> void:
+	animations.play("gift_enter")
 	print("GIFT")
 
 # Process player input during the state

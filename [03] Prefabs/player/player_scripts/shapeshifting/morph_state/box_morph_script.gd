@@ -4,6 +4,7 @@ extends State
 #box_morph_script.gd
 
 func enter() -> void:
+	animations.play("box_enter")
 	print("BOX")
 
 # Process player input during the state

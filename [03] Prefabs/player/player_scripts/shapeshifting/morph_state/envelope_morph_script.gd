@@ -4,6 +4,7 @@ extends State
 #envelope_morph_script.gd
 
 func enter() -> void:
+	animations.play("envelope_enter")
 	print("ENVELOPE")
 
 # Process player input during the state
