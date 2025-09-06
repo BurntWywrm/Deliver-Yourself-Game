@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c5ddyd8m5gkh4"]
+[gd_scene load_steps=24 format=3 uid="uid://c5ddyd8m5gkh4"]
 
 [ext_resource type="Script" uid="uid://lgvrsyljv7o4" path="res://[03] Prefabs/player/player_scripts/player/player.gd" id="1_mx1uw"]
 [ext_resource type="Script" uid="uid://025cm3nchdyi" path="res://[03] Prefabs/player/player_scripts/shapeshifting/shapeshifiting_manager/shapeshifting_manager.gd" id="2_6tigd"]
@@ -230,6 +230,10 @@ _data = {
 &"gift_enter": SubResource("Animation_3qcvm")
 }
 
+[sub_resource type="SphereMesh" id="SphereMesh_iubmf"]
+radial_segments = 8
+rings = 4
+
 [node name="player" type="RigidBody3D"]
 script = ExtResource("1_mx1uw")
 
@@ -305,4 +309,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.21459)
 
 [node name="Timers" type="Node" parent="."]
 
-[node name="Poof_CD" type="Timer" parent="Timers"]
+[node name="PoofFX_CD" type="Timer" parent="Timers"]
+
+[node name="FX" type="Node3D" parent="."]
+
+[node name="PoofFX" type="GPUParticles3D" parent="FX"]
+draw_pass_1 = SubResource("SphereMesh_iubmf")

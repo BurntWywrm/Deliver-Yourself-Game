@@ -1,8 +1,10 @@
+// Modified Flexible Toon Shader
 shader_type spatial;
 
 uniform vec4 albedo : source_color = vec4(1.0);
 uniform sampler2D albedo_texture : source_color;
 uniform bool use_triplanar = true;
+uniform bool use_alpha = true;
 uniform bool clamp_diffuse_to_max = false;
 
 uniform int cuts : hint_range(1, 8) = 3;
@@ -66,6 +68,12 @@ void fragment() {
 		tex_color = texture(albedo_texture, UV);
 	}
 	ALBEDO = albedo.rgb * tex_color.rgb;
+	
+	if (use_alpha){
+		ALPHA = albedo.a * tex_color.a;
+	} else {
+		ALPHA = 1.0;
+	}
 }
 
 void light() {

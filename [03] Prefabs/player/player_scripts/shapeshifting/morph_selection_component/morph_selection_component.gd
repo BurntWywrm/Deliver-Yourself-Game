@@ -16,19 +16,15 @@ const morph_slection_min := 1
 func process_morph_selection(event: InputEvent, current_state: State) -> State:
 	# Cycles morph
 	cycle_morph()
-	
 	# Handles selection
 	var next_state: State = select_morph()
-	
 	if next_state != null and next_state != current_state:
 		return next_state
-	
 	if next_state == current_state:
 		print("ERROR: tried to morph into same state")
 		return null
-	
 	return null
-
+	
 func cycle_morph()-> void:
 	# Morph Selection
 	if Input.is_action_pressed("ScrollUP"):
