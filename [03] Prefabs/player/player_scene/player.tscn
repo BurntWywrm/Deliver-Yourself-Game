@@ -73,6 +73,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_p6uu2"]
 resource_name = "box_enter"
+step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -80,7 +81,7 @@ tracks/0/path = NodePath("player_collision:shape")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("2_p6uu2")]
@@ -92,7 +93,7 @@ tracks/1/path = NodePath("Visuals/box:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -104,7 +105,7 @@ tracks/2/path = NodePath("Visuals/gift:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -116,14 +117,27 @@ tracks/3/path = NodePath("Visuals/envelope:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("VFX/PoofVFX:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_iubmf"]
 resource_name = "envelope_enter"
+step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -131,7 +145,7 @@ tracks/0/path = NodePath("player_collision:shape")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("8_3qcvm")]
@@ -143,7 +157,7 @@ tracks/1/path = NodePath("Visuals/box:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -155,7 +169,7 @@ tracks/2/path = NodePath("Visuals/gift:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -167,6 +181,18 @@ tracks/3/path = NodePath("Visuals/envelope:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("VFX/PoofVFX:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -175,6 +201,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_3qcvm"]
 resource_name = "gift_enter"
+step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -182,7 +209,7 @@ tracks/0/path = NodePath("player_collision:shape")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("8_iubmf")]
@@ -194,7 +221,7 @@ tracks/1/path = NodePath("Visuals/box:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -206,7 +233,7 @@ tracks/2/path = NodePath("Visuals/gift:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -218,10 +245,22 @@ tracks/3/path = NodePath("Visuals/envelope:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("VFX/PoofVFX:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_75flc"]
@@ -302,20 +341,24 @@ visible = false
 [node name="envelope_body" type="MeshInstance3D" parent="Visuals/envelope"]
 mesh = ExtResource("14_8lhsw")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.21459)
-
 [node name="Timers" type="Node" parent="."]
 
 [node name="PoofVFX_CD" type="Timer" parent="Timers"]
+unique_name_in_owner = true
+
+[node name="Cycle_CD" type="Timer" parent="Timers"]
+unique_name_in_owner = true
+wait_time = 2.5
+one_shot = true
 
 [node name="VFX" type="Node3D" parent="."]
 
 [node name="PoofVFX" type="GPUParticles3D" parent="VFX"]
-transform = Transform3D(0.615, 0, 0, 0, 0.615, 0, 0, 0, 0.615, 0, 0, 0)
-emitting = false
-one_shot = true
+transform = Transform3D(0.691339, 0, 0, 0, 0.48113, 0, 0, 0, 0.71583, 0, 0, 0)
+amount = 12
 explosiveness = 1.0
 fixed_fps = 60
 process_material = ExtResource("18_0gya6")
 draw_pass_1 = ExtResource("19_1iwgo")
+
+[connection signal="timeout" from="Timers/Cycle_CD" to="morph_selection_component" method="_on_cycle_cd_timeout"]
