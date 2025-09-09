@@ -1,11 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://dnok1q4ri8a2s"]
+[gd_scene load_steps=14 format=3 uid="uid://dnok1q4ri8a2s"]
 
-[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_nyexo"]
-[ext_resource type="Texture2D" uid="uid://cvq5gbv5px5b3" path="res://[06] Textures/kenney_prototype_textures/light/texture_07.png" id="2_sbnqs"]
-[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_3u4yh"]
-[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_kxa5b"]
-[ext_resource type="Script" uid="uid://b8hhnqsugykly" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_3u4yh"]
-[ext_resource type="PackedScene" uid="uid://c5ddyd8m5gkh4" path="res://[03] Prefabs/player/player_scene/player.tscn" id="5_t2wye"]
+[ext_resource type="Texture2D" uid="uid://cvq5gbv5px5b3" path="res://[06] Textures/kenney_prototype_textures/light/texture_07.png" id="1_54qka"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_plwby"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_en064"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_c5qss"]
+[ext_resource type="Resource" uid="uid://casgilmkvxrbe" path="res://[03] Prefabs/camera/Isometric_Camera.tres" id="5_m6dbq"]
+[ext_resource type="PackedScene" uid="uid://c5ddyd8m5gkh4" path="res://[03] Prefabs/player/player_scene/player.tscn" id="6_k6d1n"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6ks6c"]
 
@@ -23,28 +23,14 @@ data = PackedVector3Array(-2.5, 0.125, 2.5, 2.5, 0.125, 2.5, -2.5, -0.125, 2.5, 
 size = Vector3(5, 0.25, 5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sxg5e"]
-albedo_texture = ExtResource("2_sbnqs")
+albedo_texture = ExtResource("1_54qka")
 uv1_triplanar = true
 
 [sub_resource type="Resource" id="Resource_5poxo"]
-script = ExtResource("4_kxa5b")
+script = ExtResource("4_c5qss")
 duration = 1.0
 transition = 0
 ease = 2
-
-[sub_resource type="Resource" id="Resource_kxa5b"]
-script = ExtResource("5_3u4yh")
-keep_aspect = 1
-cull_mask = 1048575
-h_offset = 0.0
-v_offset = 0.0
-projection = 1
-fov = 75.0
-size = 3.0
-frustum_offset = Vector2(0, 0)
-near = 0.05
-far = 50.0
-metadata/_custom_type_script = "uid://b8hhnqsugykly"
 
 [node name="Showcase" type="Node3D"]
 
@@ -92,7 +78,7 @@ far = 50.0
 [node name="PhantomCameraHost" type="Node" parent="Camera/MainCamera3D"]
 process_priority = 300
 process_physics_priority = 300
-script = ExtResource("2_nyexo")
+script = ExtResource("2_plwby")
 metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="PlayerGroup" type="Node" parent="."]
@@ -100,14 +86,14 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 [node name="PhantomCamera3D" type="Node3D" parent="PlayerGroup" node_paths=PackedStringArray("follow_target")]
 transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612372, 2.25, 3.73614, 2.25)
 top_level = true
-script = ExtResource("3_3u4yh")
+script = ExtResource("3_en064")
 priority = 10
 follow_mode = 2
 follow_target = NodePath("../player")
 tween_resource = SubResource("Resource_5poxo")
-camera_3d_resource = SubResource("Resource_kxa5b")
+camera_3d_resource = ExtResource("5_m6dbq")
 follow_offset = Vector3(2.25, 2, 2.25)
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
-[node name="player" parent="PlayerGroup" instance=ExtResource("5_t2wye")]
+[node name="player" parent="PlayerGroup" instance=ExtResource("6_k6d1n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.73614, 0)

@@ -1,0 +1,28 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bubvcx5l6t684"]
+
+[ext_resource type="Shader" uid="uid://csrsiu22i33ck" path="res://[01] Shaders/Flexible_Toon_Shader/flexible_toon.gdshader" id="1_u0tae"]
+[ext_resource type="Texture2D" uid="uid://b8imcc8uuuomo" path="res://[03] Prefabs/player/player_assets/morphs/box/Box_box_texture.png" id="2_1daao"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_u0tae")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture = ExtResource("2_1daao")
+shader_parameter/use_triplanar = false
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 3
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = false
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv1_blend_sharpness = 32.0

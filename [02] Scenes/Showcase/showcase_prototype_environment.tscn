@@ -1,0 +1,153 @@
+[gd_scene load_steps=18 format=3 uid="uid://dv7qe571yr2ep"]
+
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="1_2cmcf"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="2_2rr2m"]
+[ext_resource type="Resource" uid="uid://casgilmkvxrbe" path="res://[03] Prefabs/camera/Isometric_Camera.tres" id="3_6pdxg"]
+[ext_resource type="PackedScene" uid="uid://c5ddyd8m5gkh4" path="res://[03] Prefabs/player/player_scene/player.tscn" id="4_5mnrw"]
+[ext_resource type="Texture2D" uid="uid://cvq5gbv5px5b3" path="res://[06] Textures/kenney_prototype_textures/light/texture_07.png" id="5_2rr2m"]
+[ext_resource type="Shader" uid="uid://csrsiu22i33ck" path="res://[01] Shaders/Flexible_Toon_Shader/flexible_toon.gdshader" id="5_5mnrw"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_7ultv"]
+[ext_resource type="Shader" uid="uid://d2huxscf541nd" path="res://[01] Shaders/Edge_Detection_Shader/Edge_Detection.gdshader" id="7_6pdxg"]
+
+[sub_resource type="Resource" id="Resource_nsc8h"]
+script = ExtResource("2_2rr2m")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2cmcf"]
+
+[sub_resource type="Sky" id="Sky_2rr2m"]
+sky_material = SubResource("ProceduralSkyMaterial_2cmcf")
+
+[sub_resource type="Environment" id="Environment_6pdxg"]
+background_mode = 2
+sky = SubResource("Sky_2rr2m")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6pdxg"]
+data = PackedVector3Array(-2.5, 0.125, 2.5, 2.5, 0.125, 2.5, -2.5, -0.125, 2.5, 2.5, 0.125, 2.5, 2.5, -0.125, 2.5, -2.5, -0.125, 2.5, 2.5, 0.125, -2.5, -2.5, 0.125, -2.5, 2.5, -0.125, -2.5, -2.5, 0.125, -2.5, -2.5, -0.125, -2.5, 2.5, -0.125, -2.5, 2.5, 0.125, 2.5, 2.5, 0.125, -2.5, 2.5, -0.125, 2.5, 2.5, 0.125, -2.5, 2.5, -0.125, -2.5, 2.5, -0.125, 2.5, -2.5, 0.125, -2.5, -2.5, 0.125, 2.5, -2.5, -0.125, -2.5, -2.5, 0.125, 2.5, -2.5, -0.125, 2.5, -2.5, -0.125, -2.5, 2.5, 0.125, 2.5, -2.5, 0.125, 2.5, 2.5, 0.125, -2.5, -2.5, 0.125, 2.5, -2.5, 0.125, -2.5, 2.5, 0.125, -2.5, -2.5, -0.125, 2.5, 2.5, -0.125, 2.5, -2.5, -0.125, -2.5, 2.5, -0.125, 2.5, 2.5, -0.125, -2.5, -2.5, -0.125, -2.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5mnrw"]
+size = Vector3(10, 0.25, 10)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nsc8h"]
+render_priority = 0
+shader = ExtResource("5_5mnrw")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture = ExtResource("5_2rr2m")
+shader_parameter/use_triplanar = true
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 3
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = false
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv1_blend_sharpness = 32.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_5mnrw"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ultv"]
+render_priority = 0
+shader = ExtResource("7_6pdxg")
+shader_parameter/lightIntensity = 1.0
+shader_parameter/lineAlpha = 0.5
+shader_parameter/useLighting = true
+shader_parameter/lineHighlight = 0.2
+shader_parameter/lineShadow = 0.1
+
+[node name="Showcase_prototype_environment" type="Node3D"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 5
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(230, 129)
+render_target_update_mode = 4
+
+[node name="PlayerGroup" type="Node" parent="SubViewportContainer/SubViewport"]
+
+[node name="PhantomCamera3D" type="Node3D" parent="SubViewportContainer/SubViewport/PlayerGroup" node_paths=PackedStringArray("follow_target")]
+transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612372, 2.25, 2.39679, 2.25)
+top_level = true
+script = ExtResource("1_2cmcf")
+priority = 10
+follow_mode = 2
+follow_target = NodePath("../player")
+tween_resource = SubResource("Resource_nsc8h")
+camera_3d_resource = ExtResource("3_6pdxg")
+follow_offset = Vector3(2.25, 2, 2.25)
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="player" parent="SubViewportContainer/SubViewport/PlayerGroup" instance=ExtResource("4_5mnrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.396786, 0)
+
+[node name="Environment" type="Node3D" parent="SubViewportContainer/SubViewport"]
+
+[node name="Lighting" type="Node3D" parent="SubViewportContainer/SubViewport/Environment"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Environment/Lighting"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.17156, 0)
+shadow_enabled = true
+
+[node name="Sun" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/Environment/Lighting"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4, 0)
+light_energy = 0.215
+shadow_enabled = true
+shadow_opacity = 0.7
+directional_shadow_mode = 0
+directional_shadow_fade_start = 1.0
+directional_shadow_max_distance = 30.0
+
+[node name="Sky" type="Node3D" parent="SubViewportContainer/SubViewport/Environment"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport/Environment/Sky"]
+environment = SubResource("Environment_6pdxg")
+
+[node name="Floor" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Environment"]
+
+[node name="FloorCollision" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Environment/Floor"]
+shape = SubResource("ConcavePolygonShape3D_6pdxg")
+
+[node name="FloorMesh" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Environment/Floor"]
+mesh = SubResource("BoxMesh_5mnrw")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_nsc8h")
+
+[node name="Camera" type="Node3D" parent="SubViewportContainer/SubViewport"]
+
+[node name="MainCamera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Camera"]
+physics_interpolation_mode = 1
+transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612372, 2.25, 2.39679, 2.25)
+projection = 1
+size = 3.0
+far = 50.0
+
+[node name="PhantomCameraHost" type="Node" parent="SubViewportContainer/SubViewport/Camera/MainCamera3D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("5_7ultv")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="EdgeDetection" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Camera/MainCamera3D"]
+mesh = SubResource("QuadMesh_5mnrw")
+surface_material_override/0 = SubResource("ShaderMaterial_7ultv")
