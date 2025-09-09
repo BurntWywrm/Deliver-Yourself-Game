@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://bljfcadxg347d"]
+
+[ext_resource type="PackedScene" uid="uid://igsh56b8h0tp" path="res://[03] Prefabs/modular_pipe_set/Modular Pipe Set.glb" id="1_h0cvl"]
+[ext_resource type="Material" uid="uid://dg62tjo73wak0" path="res://[03] Prefabs/modular_pipe_set/moduler_pipe_set_material/pipe_set_texture.tres" id="2_c5dci"]
+
+[node name="Modular Pipe Set" instance=ExtResource("1_h0cvl")]
+
+[node name="Pipe_Medium" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_c5dci")
+
+[node name="Pipe_Long" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_c5dci")
+
+[node name="Pipe_Short" parent="." index="2"]
+surface_material_override/0 = ExtResource("2_c5dci")
+
+[node name="Pipe_4Way" parent="." index="3"]
+surface_material_override/0 = ExtResource("2_c5dci")
+
+[node name="Pipe_3Way" parent="." index="4"]
+surface_material_override/0 = ExtResource("2_c5dci")
+
+[node name="Pipe_90Angle" parent="." index="5"]
+surface_material_override/0 = ExtResource("2_c5dci")
+
+[node name="Valve" parent="." index="6"]
+surface_material_override/0 = ExtResource("2_c5dci")
+
+[node name="Pipe_broken_3Way" parent="." index="7"]
+surface_material_override/0 = ExtResource("2_c5dci")
+
+[node name="Pipe_broken_4Way" parent="." index="8"]
+surface_material_override/0 = ExtResource("2_c5dci")
+
+[node name="Pipe_broken_90Angle" parent="." index="9"]
+surface_material_override/0 = ExtResource("2_c5dci")
+
+[node name="Pipe_broken_long" parent="." index="10"]
+surface_material_override/0 = ExtResource("2_c5dci")
+
+[node name="Pipe_broken_medium" parent="." index="11"]
+surface_material_override/0 = ExtResource("2_c5dci")
+
+[node name="Pipe_broken_short" parent="." index="12"]
+surface_material_override/0 = ExtResource("2_c5dci")

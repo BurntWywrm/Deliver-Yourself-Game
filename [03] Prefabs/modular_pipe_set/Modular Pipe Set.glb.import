@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://igsh56b8h0tp"
-path="res://.godot/imported/Modular Pipe Set.glb-c9235cdbd2fa801f3a2d7c37d6b26ef3.scn"
+path="res://.godot/imported/Modular Pipe Set.glb-968c52442ab7890462fd63fa05590399.scn"
 
 [deps]
 
-source_file="res://[00] Imports/Modular Pipe Set.glb"
-dest_files=["res://.godot/imported/Modular Pipe Set.glb-c9235cdbd2fa801f3a2d7c37d6b26ef3.scn"]
+source_file="res://[03] Prefabs/modular_pipe_set/Modular Pipe Set.glb"
+dest_files=["res://.godot/imported/Modular Pipe Set.glb-968c52442ab7890462fd63fa05590399.scn"]
 
 [params]
 

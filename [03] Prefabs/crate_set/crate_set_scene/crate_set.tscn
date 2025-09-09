@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b38s68lbt4pbg"]
+
+[ext_resource type="PackedScene" uid="uid://cotexsd4doxj8" path="res://[03] Prefabs/crate_set/Crate Set.glb" id="1_rn6rh"]
+[ext_resource type="Material" uid="uid://tu16v5kbjux0" path="res://[03] Prefabs/crate_set/crate_set_material/crate_set_material.tres" id="2_pp4hg"]
+
+[node name="Crate Set" instance=ExtResource("1_rn6rh")]
+
+[node name="Crate" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_pp4hg")
+
+[node name="Crate_small" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_pp4hg")

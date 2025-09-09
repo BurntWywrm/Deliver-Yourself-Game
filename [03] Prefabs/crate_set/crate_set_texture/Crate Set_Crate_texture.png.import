@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cptva8yu0ya4m"
-path.s3tc="res://.godot/imported/Crate Set_Crate_texture.png-5f84d76086eb9beeb17ea3d54ef9af6f.s3tc.ctex"
+path="res://.godot/imported/Crate Set_Crate_texture.png-b889c4c4dd9a20af60894be0ffb3f58b.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "0ad77b27ea12a10f5084050921a21a45"
@@ -14,12 +13,12 @@ generator_parameters={
 
 [deps]
 
-source_file="res://[00] Imports/Crate Set_Crate_texture.png"
-dest_files=["res://.godot/imported/Crate Set_Crate_texture.png-5f84d76086eb9beeb17ea3d54ef9af6f.s3tc.ctex"]
+source_file="res://[03] Prefabs/crate_set/crate_set_texture/Crate Set_Crate_texture.png"
+dest_files=["res://.godot/imported/Crate Set_Crate_texture.png-b889c4c4dd9a20af60894be0ffb3f58b.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

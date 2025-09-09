@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cotexsd4doxj8"
-path="res://.godot/imported/Crate Set.glb-101b72cbf422cb8fbc1629894cd7d329.scn"
+path="res://.godot/imported/Crate Set.glb-b874e9fa647c4a2dfd5ae5351bd31cc3.scn"
 
 [deps]
 
-source_file="res://[00] Imports/Crate Set.glb"
-dest_files=["res://.godot/imported/Crate Set.glb-101b72cbf422cb8fbc1629894cd7d329.scn"]
+source_file="res://[03] Prefabs/crate_set/Crate Set.glb"
+dest_files=["res://.godot/imported/Crate Set.glb-b874e9fa647c4a2dfd5ae5351bd31cc3.scn"]
 
 [params]
 
