@@ -288,6 +288,8 @@ starting_morph = NodePath("box")
 [node name="box" type="Node" parent="shapeshift_manager"]
 script = ExtResource("3_alcr1")
 
+[node name="Node" type="Node" parent="shapeshift_manager/box"]
+
 [node name="gift" type="Node" parent="shapeshift_manager"]
 script = ExtResource("4_scpqb")
 
