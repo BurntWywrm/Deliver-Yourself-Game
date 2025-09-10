@@ -111,7 +111,7 @@ shader_parameter/useLighting = true
 shader_parameter/lineHighlight = 0.2
 shader_parameter/lineShadow = 0.1
 
-[node name="Showcase_prototype_environment" type="Node3D"]
+[node name="Showcase_environment" type="Node3D"]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 texture_filter = 1
@@ -211,32 +211,32 @@ transform = Transform3D(0.213968, 0, -0.976841, 0, 1, 0, 0.976841, 0, 0.213968, 
 [node name="Pipe_90Angle" parent="SubViewportContainer/SubViewport/Environment/Assets/Modular Pipe Set" index="5"]
 transform = Transform3D(0.213968, 0, -0.976841, 0, 1, 0, 0.976841, 0, 0.213968, 1.95153, 0.307679, -2.50796)
 
+[node name="Valve" parent="SubViewportContainer/SubViewport/Environment/Assets/Modular Pipe Set" index="6"]
+transform = Transform3D(0.213968, 0, -0.976841, 0, 1, 0, 0.976841, 0, 0.213968, 2.54431, 0.730184, 0.198261)
+
+[node name="Pipe_broken_3Way" parent="SubViewportContainer/SubViewport/Environment/Assets/Modular Pipe Set" index="7"]
+transform = Transform3D(-0.5, -0.866025, 0, 0, 0, -1, 0.866025, -0.5, 0, -2.70333, 0.460137, -0.295995)
+
+[node name="Pipe_broken_4Way" parent="SubViewportContainer/SubViewport/Environment/Assets/Modular Pipe Set" index="8"]
+transform = Transform3D(-0.5, -0.866025, 0, 0, 0, -1, 0.866025, -0.5, 0, -2.45991, 0.460137, -0.588316)
+
+[node name="Pipe_broken_90Angle" parent="SubViewportContainer/SubViewport/Environment/Assets/Modular Pipe Set" index="9"]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -1.29, 0.307679, -2.67931)
+
+[node name="Pipe_broken_long" parent="SubViewportContainer/SubViewport/Environment/Assets/Modular Pipe Set" index="10"]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -1.62332, 0.427809, -2.10198)
+
+[node name="Pipe_broken_medium" parent="SubViewportContainer/SubViewport/Environment/Assets/Modular Pipe Set" index="11"]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -2.03999, 0.427809, -1.38029)
+
+[node name="Pipe_broken_short" parent="SubViewportContainer/SubViewport/Environment/Assets/Modular Pipe Set" index="12"]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -2.3004, 0.427809, -0.929239)
+
 [node name="Pipe_90Angle2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Environment/Assets/Modular Pipe Set"]
 transform = Transform3D(-0.171551, 0, 0.985175, 0, 1, 0, -0.985175, 0, -0.171551, 2.62006, 0.307679, 0.541576)
 mesh = SubResource("ArrayMesh_r1lp5")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("10_kubmq")
-
-[node name="Valve" parent="SubViewportContainer/SubViewport/Environment/Assets/Modular Pipe Set" index="7"]
-transform = Transform3D(0.213968, 0, -0.976841, 0, 1, 0, 0.976841, 0, 0.213968, 2.54431, 0.730184, 0.198261)
-
-[node name="Pipe_broken_3Way" parent="SubViewportContainer/SubViewport/Environment/Assets/Modular Pipe Set" index="8"]
-transform = Transform3D(-0.5, -0.866025, 0, 0, 0, -1, 0.866025, -0.5, 0, -2.70333, 0.460137, -0.295995)
-
-[node name="Pipe_broken_4Way" parent="SubViewportContainer/SubViewport/Environment/Assets/Modular Pipe Set" index="9"]
-transform = Transform3D(-0.5, -0.866025, 0, 0, 0, -1, 0.866025, -0.5, 0, -2.45991, 0.460137, -0.588316)
-
-[node name="Pipe_broken_90Angle" parent="SubViewportContainer/SubViewport/Environment/Assets/Modular Pipe Set" index="10"]
-transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -1.29, 0.307679, -2.67931)
-
-[node name="Pipe_broken_long" parent="SubViewportContainer/SubViewport/Environment/Assets/Modular Pipe Set" index="11"]
-transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -1.62332, 0.427809, -2.10198)
-
-[node name="Pipe_broken_medium" parent="SubViewportContainer/SubViewport/Environment/Assets/Modular Pipe Set" index="12"]
-transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -2.03999, 0.427809, -1.38029)
-
-[node name="Pipe_broken_short" parent="SubViewportContainer/SubViewport/Environment/Assets/Modular Pipe Set" index="13"]
-transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -2.3004, 0.427809, -0.929239)
 
 [node name="Camera" type="Node3D" parent="SubViewportContainer/SubViewport"]
 
