@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c5ddyd8m5gkh4"]
+[gd_scene load_steps=38 format=3 uid="uid://c5ddyd8m5gkh4"]
 
 [ext_resource type="Script" uid="uid://lgvrsyljv7o4" path="res://[03] Prefabs/player/player_scripts/player/player.gd" id="1_mx1uw"]
 [ext_resource type="Script" uid="uid://025cm3nchdyi" path="res://[03] Prefabs/player/player_scripts/shapeshifting/shapeshifiting_manager/shapeshifting_manager.gd" id="2_6tigd"]
@@ -8,17 +8,26 @@
 [ext_resource type="Script" uid="uid://72ri1l3jltu4" path="res://[03] Prefabs/player/player_scripts/shapeshifting/morph_state/gift_morph_script.gd" id="4_scpqb"]
 [ext_resource type="Script" uid="uid://dj8cop63fkpe2" path="res://[03] Prefabs/player/player_scripts/movement/movement_manager/movement_manager.gd" id="5_0fkpx"]
 [ext_resource type="Script" uid="uid://brn5tpxkk83bw" path="res://[03] Prefabs/player/player_scripts/shapeshifting/morph_selection_component/morph_selection_component.gd" id="6_3w07h"]
+[ext_resource type="Script" uid="uid://ck8unlnb55wrb" path="res://[03] Prefabs/player/player_scripts/movement/movement_state/box_movement/box_move_state.gd" id="6_f6dsx"]
 [ext_resource type="ArrayMesh" uid="uid://cnpome5d7v2ke" path="res://[03] Prefabs/player/player_assets/morphs/box/box mesh/box_body.tres" id="7_8mq0u"]
+[ext_resource type="Script" uid="uid://bvw7yvxko2yo4" path="res://[03] Prefabs/player/player_scripts/movement/movement_state/box_movement/box_jump_state.gd" id="7_utfwv"]
 [ext_resource type="Shape3D" uid="uid://b5mhsdsw23m72" path="res://[03] Prefabs/player/player_assets/collisions/envelope/envelope_collision.tres" id="8_3qcvm"]
+[ext_resource type="Script" uid="uid://dimux686hu15n" path="res://[03] Prefabs/player/player_scripts/movement/movement_state/box_movement/box_idle_state.gd" id="8_ef4dy"]
 [ext_resource type="ArrayMesh" uid="uid://bdfay1orkm2i2" path="res://[03] Prefabs/player/player_assets/morphs/box/box mesh/box_flap_1.tres" id="8_g0waa"]
 [ext_resource type="Shape3D" uid="uid://f7hi4txnl64w" path="res://[03] Prefabs/player/player_assets/collisions/gift/gift_collision.tres" id="8_iubmf"]
 [ext_resource type="ArrayMesh" uid="uid://d2p3uf58mfehp" path="res://[03] Prefabs/player/player_assets/morphs/box/box mesh/box_flap_2.tres" id="9_nlnxo"]
+[ext_resource type="Script" uid="uid://dypivc75x3ror" path="res://[03] Prefabs/player/player_scripts/movement/movement_state/gift_movement/gift_move_state.gd" id="10_0uv1a"]
 [ext_resource type="ArrayMesh" uid="uid://px8hux3cvw5n" path="res://[03] Prefabs/player/player_assets/morphs/box/box mesh/box_small_1.tres" id="10_vab0r"]
+[ext_resource type="Script" uid="uid://82cv7oloc45j" path="res://[03] Prefabs/player/player_scripts/movement/movement_state/gift_movement/gift_idle_state.gd" id="11_7xus3"]
 [ext_resource type="ArrayMesh" uid="uid://ckgwg2pg7tmsf" path="res://[03] Prefabs/player/player_assets/morphs/box/box mesh/box_small_2.tres" id="11_8lhsw"]
 [ext_resource type="Material" uid="uid://bubvcx5l6t684" path="res://[03] Prefabs/player/player_assets/materials/box_material.tres" id="11_syin5"]
+[ext_resource type="Script" uid="uid://crabxoqv05pa4" path="res://[03] Prefabs/player/player_scripts/movement/movement_state/gift_movement/gift_shoot_state.gd" id="12_bwkgm"]
 [ext_resource type="ArrayMesh" uid="uid://ddrwydl52qxik" path="res://[03] Prefabs/player/player_assets/morphs/gift/gift_mesh/gift_body.tres" id="12_vab0r"]
 [ext_resource type="ArrayMesh" uid="uid://dyc2c6xrwsy8x" path="res://[03] Prefabs/player/player_assets/morphs/gift/gift_mesh/gift_lid.tres" id="13_8lhsw"]
 [ext_resource type="ArrayMesh" uid="uid://cqoayq212jusd" path="res://[03] Prefabs/player/player_assets/morphs/envelope/envelope mesh/envelope.tres" id="14_8lhsw"]
+[ext_resource type="Script" uid="uid://c2ydyrththsbd" path="res://[03] Prefabs/player/player_scripts/movement/movement_state/envelope_movement/envelope_move_state.gd" id="14_v1rkq"]
+[ext_resource type="Script" uid="uid://vfdcjds0jp8b" path="res://[03] Prefabs/player/player_scripts/movement/movement_state/envelope_movement/envelope_fall_state.gd" id="15_ykulw"]
+[ext_resource type="Script" uid="uid://dgtbkvhqjp0jn" path="res://[03] Prefabs/player/player_scripts/movement/movement_state/envelope_movement/envelope_idle_state.gd" id="16_1d1dw"]
 [ext_resource type="Material" uid="uid://cpkqva374xvv2" path="res://[03] Prefabs/player/player_assets/materials/gift_material.tres" id="17_0fkpx"]
 [ext_resource type="Material" uid="uid://7hwbs2xnblb4" path="res://[04] VFX/PoofVFX/poofprocessmaterial.tres" id="18_0gya6"]
 [ext_resource type="SphereMesh" uid="uid://b17fbs4ayh4qf" path="res://[04] VFX/PoofVFX/poofdrawpass.tres" id="19_1iwgo"]
@@ -292,17 +301,44 @@ script = ExtResource("3_alcr1")
 [node name="box_movement_manager" type="Node" parent="shapeshift_manager/box"]
 script = ExtResource("5_0fkpx")
 
+[node name="box_move" type="Node" parent="shapeshift_manager/box/box_movement_manager"]
+script = ExtResource("6_f6dsx")
+
+[node name="box_jump" type="Node" parent="shapeshift_manager/box/box_movement_manager"]
+script = ExtResource("7_utfwv")
+
+[node name="box_idle" type="Node" parent="shapeshift_manager/box/box_movement_manager"]
+script = ExtResource("8_ef4dy")
+
 [node name="gift" type="Node" parent="shapeshift_manager"]
 script = ExtResource("4_scpqb")
 
 [node name="gift_movement_manager" type="Node" parent="shapeshift_manager/gift"]
 script = ExtResource("5_0fkpx")
 
+[node name="gift_move" type="Node" parent="shapeshift_manager/gift/gift_movement_manager"]
+script = ExtResource("10_0uv1a")
+
+[node name="gift_idle" type="Node" parent="shapeshift_manager/gift/gift_movement_manager"]
+script = ExtResource("11_7xus3")
+
+[node name="gift_shoot" type="Node" parent="shapeshift_manager/gift/gift_movement_manager"]
+script = ExtResource("12_bwkgm")
+
 [node name="envelope" type="Node" parent="shapeshift_manager"]
 script = ExtResource("4_evv4n")
 
 [node name="envelope_movement_manager" type="Node" parent="shapeshift_manager/envelope"]
 script = ExtResource("5_0fkpx")
+
+[node name="envelope_move" type="Node" parent="shapeshift_manager/envelope/envelope_movement_manager"]
+script = ExtResource("14_v1rkq")
+
+[node name="envelope_fall" type="Node" parent="shapeshift_manager/envelope/envelope_movement_manager"]
+script = ExtResource("15_ykulw")
+
+[node name="envelope_idle" type="Node" parent="shapeshift_manager/envelope/envelope_movement_manager"]
+script = ExtResource("16_1d1dw")
 
 [node name="morph_selection_component" type="Node" parent="." node_paths=PackedStringArray("envelope_morph", "gift_morph", "box_morph")]
 script = ExtResource("6_3w07h")
