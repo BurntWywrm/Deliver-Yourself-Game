@@ -1,16 +1,15 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cpkqva374xvv2"]
 
 [ext_resource type="Shader" uid="uid://csrsiu22i33ck" path="res://[01] Shaders/Flexible_Toon_Shader/flexible_toon.gdshader" id="1_30gfn"]
-[ext_resource type="Texture2D" uid="uid://dfy2uhogydsx2" path="res://[03] Prefabs/player/player_assets/morphs/gift/Gift_gift_texture.png" id="2_0ota3"]
+[ext_resource type="Texture2D" uid="uid://cojsmb6pugx11" path="res://[03] Prefabs/player/player_assets/morphs/gift/light_gift_texture.png" id="2_30gfn"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_30gfn")
 shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/albedo_texture = ExtResource("2_0ota3")
+shader_parameter/albedo_texture = ExtResource("2_30gfn")
 shader_parameter/use_triplanar = false
 shader_parameter/clamp_diffuse_to_max = false
-shader_parameter/use_filter_nearest = true
 shader_parameter/cuts = 3
 shader_parameter/wrap = 0.0
 shader_parameter/steepness = 1.0

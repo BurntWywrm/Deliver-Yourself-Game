@@ -105,8 +105,8 @@ size = Vector2(2, 2)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7ultv"]
 render_priority = 0
 shader = ExtResource("7_6pdxg")
-shader_parameter/lightIntensity = 1.0
-shader_parameter/lineAlpha = 0.5
+shader_parameter/lightIntensity = 1.925
+shader_parameter/lineAlpha = 0.305
 shader_parameter/useLighting = true
 shader_parameter/lineHighlight = 0.2
 shader_parameter/lineShadow = 0.1
@@ -189,7 +189,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_nsc8h")
 transform = Transform3D(0.780867, 0, 0.624698, 0, 1, 0, -0.624698, 0, 0.780867, -1.19346, 0.597653, 1.68947)
 
 [node name="Crate_small" parent="SubViewportContainer/SubViewport/Environment/Assets/Crate Set" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.154291, 0.472653, -1.93721)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.154291, 0.472653, -1.86657)
 
 [node name="Modular Pipe Set" parent="SubViewportContainer/SubViewport/Environment/Assets" instance=ExtResource("8_51077")]
 

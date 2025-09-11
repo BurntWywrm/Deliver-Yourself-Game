@@ -1,16 +1,15 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bubvcx5l6t684"]
 
-[ext_resource type="Shader" uid="uid://csrsiu22i33ck" path="res://[01] Shaders/Flexible_Toon_Shader/flexible_toon.gdshader" id="1_u0tae"]
-[ext_resource type="Texture2D" uid="uid://b8imcc8uuuomo" path="res://[03] Prefabs/player/player_assets/morphs/box/Box_box_texture.png" id="2_1daao"]
+[ext_resource type="Shader" uid="uid://csrsiu22i33ck" path="res://[01] Shaders/Flexible_Toon_Shader/flexible_toon.gdshader" id="1_rxc6e"]
+[ext_resource type="Texture2D" uid="uid://dddqu12bwaxsl" path="res://[03] Prefabs/player/player_assets/morphs/box/light_box_texture-export.png" id="2_jqcp0"]
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_u0tae")
+shader = ExtResource("1_rxc6e")
 shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/albedo_texture = ExtResource("2_1daao")
+shader_parameter/albedo_texture = ExtResource("2_jqcp0")
 shader_parameter/use_triplanar = false
 shader_parameter/clamp_diffuse_to_max = false
-shader_parameter/use_filter_nearest = true
 shader_parameter/cuts = 3
 shader_parameter/wrap = 0.0
 shader_parameter/steepness = 1.0
