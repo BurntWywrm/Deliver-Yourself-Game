@@ -2,12 +2,11 @@
 shader_type spatial;
 
 uniform vec4 albedo : source_color = vec4(1.0);
-uniform sampler2D albedo_texture : source_color;
+uniform sampler2D albedo_texture : source_color, filter_nearest;
 uniform bool use_triplanar = true;
 uniform bool clamp_diffuse_to_max = false;
 
-uniform bool use_filter_nearest = true;
-uniform sampler2D Texture2DParameter : filter_nearest;
+
 
 uniform int cuts : hint_range(1, 8) = 3;
 uniform float wrap : hint_range(-2.0, 2.0) = 0.0;
