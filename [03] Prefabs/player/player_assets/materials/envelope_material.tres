@@ -10,6 +10,7 @@ shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/albedo_texture = ExtResource("2_t23q5")
 shader_parameter/use_triplanar = false
 shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/use_filter_nearest = true
 shader_parameter/cuts = 3
 shader_parameter/wrap = 0.0
 shader_parameter/steepness = 1.0

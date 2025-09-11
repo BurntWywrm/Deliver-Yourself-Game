@@ -1,11 +1,15 @@
 class_name Box_Morph
 extends State
-
 #box_morph_script.gd
+
+@onready var box_movement_manager: Node = $box_movement_manager
 
 func enter() -> void:
 	animations.play("box_enter")
 	print("BOX")
+
+func exit() -> void:
+	box_movement_manager.deinit()
 
 # Process player input during the state
 func process_input(event: InputEvent) -> State:

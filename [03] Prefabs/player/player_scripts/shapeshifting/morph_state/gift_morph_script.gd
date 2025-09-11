@@ -1,11 +1,16 @@
 class_name Gift_Morph
 extends State
-
 #gift_morph_script.gd
+
+@onready var gift_movement_manager: Node = $gift_movement_manager
+
 
 func enter() -> void:
 	animations.play("gift_enter")
 	print("GIFT")
+
+func exit() -> void:
+	gift_movement_manager.deinit()
 
 # Process player input during the state
 func process_input(event: InputEvent) -> State:
